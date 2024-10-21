@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCA Ferretería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Análisis de Componentes Principales (PCA)</h1>
+        <form action="/perform_pca" method="post">
+            <button type="submit">Realizar PCA</button>
+        </form>
+        {% if pca_plot %}
+            <h2>Gráfico PCA</h2>
+            <img src="{{ pca_plot }}" alt="PCA Plot">
+        {% endif %}
+    </div>
+</body>
+</html>
